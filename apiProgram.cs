@@ -266,32 +266,5 @@ namespace DP_APINUVTotal
         }
     }
 
-    public static class DHelper
-    {
-        public static void SendWithoutQueue(string fromEmail, string toEmail, string mailTitle, string mailBody)
-        {
-            try
-            {
-
-                MailMessage mail = new MailMessage();
-                mail.From = new MailAddress("info@51ping.com", "DP5.0");
-                mail.To.Add(toEmail);
-                mail.Priority = MailPriority.High;
-                mail.IsBodyHtml = true;
-                mail.Subject = mailTitle;
-                mail.Body = mailBody;
-
-                SmtpClient smtp = new SmtpClient("mail.51ping.com");
-                smtp.Credentials = new NetworkCredential("info@51ping.com", "chinese1");
-                smtp.Send(mail);
-            }
-            catch
-            {
-
-
-            }
-
-
-        }
-    }
+    
 }
